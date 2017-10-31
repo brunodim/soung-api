@@ -1,0 +1,25 @@
+/***********************************************/
+/*                 INTALLATION                 */
+/***********************************************/
+
+#1 Unzip the test dir on your web directory
+#2 Make sure that the mod_rewrite module is enable
+#3 Make sure your version of PHP is >= to 7.0
+#5 Execute the /install/test.sql file in your database to create the tables
+#6 Edit the file /src/Conf/application.php and put your SQL settings
+#5 Edit the file /src/Conf/application.php and adapt the routes prefix parameter
+   to your configuration => http://[host_name][routes prefix]
+   !!! The prefix must be empty or start by "/"
+
+/************************************************/
+/*                     USAGE                    */
+/************************************************/
+
+#1 Get favorites (adapt the host according to your settings):
+curl -i -X GET http://localhost:1234/favorite/user/1
+
+#2 Add favorite (adapt the host according to your settings):
+curl -i -X POST http://localhost:1234/favorite/add/user/1/song/2
+
+#3 Remove favorite (adapt the host according to your settings):
+curl -i -X DELETE http://localhost:1234/favorite/add/user/1/song/2
